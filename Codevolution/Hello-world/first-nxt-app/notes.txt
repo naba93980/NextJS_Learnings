@@ -1,0 +1,4 @@
+.next folder is the folder where the application is served from
+styles folder contains global and component specific css 
+public folder contains all the public resources for our application
+pages folder is responsible for the routing feature in the application
