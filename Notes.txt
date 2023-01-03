@@ -1,0 +1,15 @@
+why next js renders pages again after hydration?
+
+-->
+
+https://github.com/vercel/next.js/issues/12010
+
+Hi, this is the expected behavior for automatically statically optimized dynamic pages.
+
+When a dynamic page does not leverage getServerSideProps, getStaticProps, or getInitialProps 
+it is auto prerendered at build time and since the dynamic page's values can't be known during 
+this stage the initial HTML doesn't isn't rendered with them so during the first render on the 
+client we can't provide these values either to make sure to match the initial HTML and not break hydration.
+
+After hydration has occurred we parse the values from the URL on the client and trigger another render 
+to allow the parsed values to be used now that hydration has occurred.
