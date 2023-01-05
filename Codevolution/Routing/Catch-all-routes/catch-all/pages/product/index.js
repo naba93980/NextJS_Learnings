@@ -7,7 +7,7 @@ return (
 <div>
   <h1>product</h1>
   <Link href="/">Home</Link>
-  <Link href={`/product/${productId}`} replace={true}>Product {productId}</Link>
+  <Link href={`/product/${productId}`} replace>Product {productId}</Link>
 </div>
 );
 }
