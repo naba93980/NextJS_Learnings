@@ -1,8 +1,19 @@
+import { useState } from "react";
+
 function EventList({ eventlList }) {
+    const [events, setEvents]=useState(eventlList);
+
+    const fetchSportsEvents = async () => {
+        const response = await fetch('http://localhost:4000/events?category=sports');
+        const data = await response.json();
+        setEvents(data);
+    }
+    
     return (
         <>
             <h1>List of events</h1>
-            {eventlList.map(event => {
+            <button onClick={fetchSportsEvents}>Sports Events</button>
+            {events.map(event => {
                 return (
                     <div key={event.id}>
                         <h2>
