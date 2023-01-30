@@ -1,0 +1,31 @@
+import React from 'react'
+import { useState, useEffect } from 'react'
+
+export default function Dashboard() {
+    const [isLoading, setIsLoading] = useState(true);
+    const [dashboardData, setdashboardData] = useState(null);
+
+    useEffect(() => {
+        async function fetchDashboardData() {
+            const response = await fetch('http://localhost:4000/dashboard')
+            const data = await response.json()
+            setdashboardData(data)
+            setIsLoading(false)
+        }
+        fetchDashboardData()
+    }, [])
+
+    if (isLoading) {
+        return <h2>Loaaading...</h2>
+    }
+
+    return (
+        <div>
+            <h2>DashBoard</h2>
+            <h2>Posts - {dashboardData.posts}</h2>
+            <h2>Likes - {dashboardData.likes}</h2>
+            <h2>Followers - {dashboardData.followers}</h2>
+            <h2>Following - {dashboardData.following}</h2>
+        </div>
+    )
+}
