@@ -1,7 +1,16 @@
+import  Head  from 'next/head'
 import Footer from '../components/Footer'
 
 function About() {
-    return <h1 className='content'>About</h1>
+    return (
+        <>
+            <Head>
+                <title>Next JS Learning</title>
+                <meta name='description' content='learning on next js' />
+            </Head>
+            <h1 className='content'>About</h1>
+        </>
+    )
 }
 export default About
 
