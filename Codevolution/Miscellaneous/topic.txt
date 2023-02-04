@@ -1,0 +1,19 @@
+App Layout
+
+Head Component
+
+Image Component
+
+Absolute Imports and Module Paths
+
+Static HTML Export
+
+Configure TypeScript Support
+
+Preview
+
+Next Config File
+
+Redirects
+
+Environment Variables
