@@ -2,6 +2,9 @@ import Image from 'next/image'
 import img from '../public/1.jpg'
 
 function PetsPage() {
+
+    console.log(process.env._USER);
+
     return (
         <div>
             <Image src={img} placeholder='blur' alt='pet' width='280' height='420' />
