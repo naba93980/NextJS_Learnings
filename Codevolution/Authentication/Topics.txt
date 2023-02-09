@@ -1,0 +1,11 @@
+Client-side authentication
+
+Server-side authentication
+
+API routes authentication
+
+User data
+
+No need to persist? Auth services like GitHub, Facebook etc. to ensure the user is authenticated
+
+Need to persist? Database
