@@ -7,3 +7,4 @@ globals.css
 Home.module.css
 out/
 .env
+.env.local
