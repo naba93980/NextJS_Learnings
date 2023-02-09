@@ -6,3 +6,4 @@ node_modules/
 globals.css
 Home.module.css
 out/
+.env
