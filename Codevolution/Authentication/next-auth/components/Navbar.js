@@ -1,9 +1,26 @@
 import Link from 'next/link'
-import { signIn, signOut, useSession } from 'next-auth/react'
+import { signIn, signOut, getSession, useSession } from 'next-auth/react'
+import { useState, useEffect } from 'react'
 
 function Navbar() {
     const { data: session, status } = useSession();
-    console.log({ session, status })
+
+    const [loading, setLoading] = useState(true)
+    useEffect(() => {
+      const securePage = async () => {
+        const session = await getSession()
+        if (!session) {
+          signIn();
+        } else {
+          setLoading(false)
+        }
+      }
+      securePage()
+    }, [])
+    if (loading) {
+      return <h2>Loading...</h2>
+    }
+  
     return (
         <nav className='header'>
             <h1 className='logo'>
